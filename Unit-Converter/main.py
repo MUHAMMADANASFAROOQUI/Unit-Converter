@@ -1,11 +1,40 @@
 import streamlit as st
 
+st.set_page_config(page_title="Unit Converter", page_icon="💡" , layout="centered")
 
+#custom CSS
+st.markdown(
+    """
+    <style>
+        .stButton>button{
+        background-color: #f55c7a;
+        color: white;
+        }
+        .stButton>button:hover {
+        background-color: #e74c3c;  
+        color: white;
+        }
+        .stSelectbox>select {
+            background-color: #957dad;
+            color: white;
+            border: 1px solid #6c5b7b;
+            padding: 8px;
+            border-radius: 5px;
+        }
+        
+        .stApp {
+            background-color: #fdf6e3;
+            color: #2c3e50;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Title and Description
 st.title("🔁 Unit Converter ")
 st.markdown("### Instant Conversions for Length, Weight, and Time.")
-st.write("Welcome! Choose your unit, enter the value, and see the conversion instantly!")
+st.write("👋 Welcome! Choose your unit, enter the value, and see the conversion instantly!")
 
 selected_Category = st.selectbox("Select Conversion Type:", ["Length", "Weight", "Time"])
 value = st.number_input("Enter Value", value=0.0, min_value=0.0, step=0.1)
